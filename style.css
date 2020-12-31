@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+    --font: 'Righteous', cursive;
+
+    --navy: #2E2A39;
+    --teal: #058789; 
+    --orange: #D54B1A; 
+    --yellow: #E3A72F; 
+    --cream: #F0ECC9; 
+    --dgreen: #2F4B26; 
+    --lgreen: #3E885B; 
+    --pgreen: #85BDA6; 
+}
+
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+#canvas {
+    width: 100%; 
+    height: 100vh;
+    text-align: center;
+    overflow: hidden; 
+}
+
+.box {
+    width: 20px;
+    height: 20px; 
+    display: inline-block;
+}
+
+.dot {
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+}
+
+.colour-1, 
+.colour-2, 
+.colour-3, 
+.colour-4, 
+.colour-5 {
+    position: relative; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.colour-1 {
+    animation-name: grow1;
+}
+
+.colour-2 {
+    animation-name: grow2; 
+}
+
+.colour-3 {
+    animation-name: grow3; 
+}
+
+.colour-4 {
+    animation-name: grow4; 
+}
+
+.colour-5 {
+    animation-name: grow5; 
+}
+
+.box:hover .colour-1, 
+.box:hover .colour-2,
+.box:hover .colour-3,
+.box:hover .colour-4,
+.box:hover .colour-5 {
+    animation-play-state: running;
+}
+
+@keyframes grow1 {
+    0% {
+        background-color: var(--cream); 
+        z-index: 0;
+        width: 10px; 
+        height: 10px;
+    }
+    20% {
+        z-index: 1;
+    }
+    100% {
+        background-color: var(--dgreen);
+        width: 50px; 
+        height: 50px; 
+        z-index: 1; 
+    }
+}
+
+@keyframes grow2 {
+    0% { 
+        width: 10px;
+        height: 10px;
+        background-color: var(--cream); 
+    }
+    20% {
+        z-index: 1;
+    }
+    100% { 
+        width: 100px; 
+        height: 100px; 
+        background-color: var(--lgreen);
+        z-index: 1;
+    }
+}
+
+
+@keyframes grow3 {
+    0% { 
+        width: 10px;
+        height: 10px;
+        background-color: var(--cream); 
+        z-index: 0; 
+    }
+    20% {
+        z-index: 1;
+    }
+    100% { 
+        width: 150px; 
+        height: 150px; 
+        background-color: var(--pgreen);
+        z-index: 1;
+    }
+}
+
+
+@keyframes grow4 {
+    0% { 
+        width: 10px;
+        height: 10px;
+        background-color: var(--cream); 
+        z-index: 0;
+    }
+    20% {
+        z-index: 1;
+    }
+    100% { 
+        width: 175px; 
+        height: 175px; 
+        background-color: var(--orange);
+        z-index: 1;
+    }
+}
+
+@keyframes grow5 {
+    0% { 
+        width: 10px;
+        height: 10px;
+        background-color: var(--cream); 
+        z-index: 0;
+    }
+    20% {
+        z-index: 1;
+    }
+    100% { 
+        width: 150px; 
+        height: 150px; 
+        background-color: var(--yellow);
+        z-index: 1;
+    }
+}
+
+h1 {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    font-family: var(--font);  
+    font-size: calc(1em + 10vw);
+    
+    color: var(--teal); 
+    text-shadow: 3px 3px var(--navy);
+    letter-spacing: 3px;
+    z-index:100; 
+}
